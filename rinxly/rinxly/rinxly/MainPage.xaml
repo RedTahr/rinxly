@@ -4,11 +4,23 @@
              xmlns:local="clr-namespace:rinxly"
              x:Class="rinxly.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+	<StackLayout>
+		<!-- Place new controls here -->
+		<Label Text="Rinxly" HorizontalOptions="CenterAndExpand" />
+		<ListView ItemsSource="{Binding Rings}" SeparatorColor="Silver" SeparatorVisibility="Default" x:Name="ringsListView">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout>
+							<Label Text="{Binding Name}"/>
+							<Label Text="{Binding Device, StringFormat='{0}'}"/>
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<Button Text="Pair" Clicked="OnClick_Pair" />
+		<Button Text="Connect" Clicked="OnClick_Connect" />
+	</StackLayout>
 
 </ContentPage>
