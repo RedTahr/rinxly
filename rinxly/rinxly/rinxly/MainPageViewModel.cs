@@ -8,7 +8,7 @@ using System.Text;
 
 namespace rinxly {
 	public class MainPageViewModel {
-		public ObservableCollection<Ring> Rings { get; set; } = new ObservableCollection<Ring>();
+		public ObservableCollection<JewelleryItem> JewelleryItems { get; set; } = new ObservableCollection<JewelleryItem>();
 
 		public MainPageViewModel() {
 
@@ -58,7 +58,8 @@ namespace rinxly {
 			System.Diagnostics.Debug.WriteLine($"ScanResult.AdData.ServiceUuids: {scanResult.AdvertisementData.ServiceUuids}");
 			System.Diagnostics.Debug.WriteLine($"ScanResult.AdData.TxPower: {scanResult.AdvertisementData.TxPower}");
 
-			var ring = new Ring {
+			var ring = new JewelleryItem
+			{
 				Device = scanResult.Device,
 				Name = scanResult.Device.Name ?? "",
 				Features = scanResult.Device.Features,
@@ -69,8 +70,9 @@ namespace rinxly {
 				TxPower = scanResult.AdvertisementData.TxPower,
 			};
 
-			if(!Rings.Any(r => r.Name == ring.Name && r.Device == ring.Device)) {
-				Rings.Add(ring);
+			if(!JewelleryItems.Any(r => r.Name == ring.Name && r.Device == ring.Device)) {
+				JewelleryItems.Add(ring);
+							   
 				// subscribe to discoveriable things.
 			}
 		}

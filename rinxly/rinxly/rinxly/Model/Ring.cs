@@ -5,7 +5,7 @@ using System.Text;
 
 namespace rinxly.Model
 {
-	public class Ring
+	public class ShinyBling
 	{
 		public IDevice Device { get; set; }
 		public string Name { get; set; }

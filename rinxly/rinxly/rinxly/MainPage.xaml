@@ -19,8 +19,11 @@
 				</DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>
-		<Button Text="Pair" Clicked="OnClick_Pair" />
 		<Button Text="Connect" Clicked="OnClick_Connect" />
+		<Button Text="Pair" Clicked="OnClick_Pair" />
+		<Button Text="Unpair" Clicked="OnClick_Unpair" />
+		<Button Text="Blink" Clicked="OnClick_Blink" />
+		<Button Text="Vibrate" Clicked="OnClick_Vibrate" />
 	</StackLayout>
 
 </ContentPage>
